@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116202661463292679}
-  - component: {fileID: 818161030655725847}
+  - component: {fileID: 3095593133146851607}
   m_Layer: 0
   m_Name: TurretPivot
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 5814669643050079620}
   m_Father: {fileID: 3404142865662827378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &818161030655725847
+--- !u!114 &3095593133146851607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2877338205908727126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 06a3ce6ac84fa2e4db067aaae1b99b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 0
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549661451124915615}
   - component: {fileID: 6276820125529684965}
-  - component: {fileID: 147468763284172992}
+  - component: {fileID: 1127212084134555814}
   - component: {fileID: 1351944067346740237}
   m_Layer: 0
   m_Name: TankTracks
@@ -230,7 +230,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &147468763284172992
+--- !u!114 &1127212084134555814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3511491422209402570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 06a3ce6ac84fa2e4db067aaae1b99b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 0
@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3404142865662827378}
   - component: {fileID: 4787581629743250020}
-  - component: {fileID: 2603836270315299794}
+  - component: {fileID: 5805686092830876988}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -436,7 +436,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &2603836270315299794
+--- !u!114 &5805686092830876988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8838053479968204428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 06a3ce6ac84fa2e4db067aaae1b99b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
