@@ -102,7 +102,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1598416177
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 8769e4453ce5bc3429cfba7d58fbef13, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -248,7 +248,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1598416177
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1a838243856331f4681c559527ad5846, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -403,7 +403,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1598416177
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 9d8bd4f8481a773488649b18bd02cbc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -489,7 +489,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1598416177
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 200
   m_Sprite: {fileID: 21300000, guid: a94bf141bd2044c4399e321445c83112, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 3845021359658084863}
   - component: {fileID: -8163166371316401215}
   - component: {fileID: 6304801218411963643}
+  - component: {fileID: 716198501655816925}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -828,4 +829,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   CurrentHealth:
+    m_InternalValue: 0
+--- !u!114 &716198501655816925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8838053479968204428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d541dbd6e261d4881256ea2c4e112c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalCoins:
     m_InternalValue: 0
