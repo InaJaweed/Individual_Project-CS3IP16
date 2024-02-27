@@ -57,14 +57,14 @@ public static class AuthenticationWrap
                     break;
                 }
             }
-            catch(AuthenticationException ex)
+            catch(AuthenticationException authException)
             {
-                UnityEngine.Debug.LogError(ex);
+                UnityEngine.Debug.LogError(authException);
                 AuthState = AuthState.Error;
             }
-            catch (RequestFailedException exeption)
+            catch (RequestFailedException requestException)
             {
-                UnityEngine.Debug.LogError(exeption);
+                UnityEngine.Debug.LogError(requestException);
                 AuthState = AuthState.Error;
             }
 
