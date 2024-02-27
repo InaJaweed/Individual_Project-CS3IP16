@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &611145799864914753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5314394947134716580}
+  m_Layer: 0
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5314394947134716580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611145799864914753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5814669643050079620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619267964561288017
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +361,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.425, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5314394947134716580}
   m_Father: {fileID: 116202661463292679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &299817157138596276
@@ -399,6 +431,7 @@ GameObject:
   - component: {fileID: 6407023207167156619}
   - component: {fileID: 9044898891672666409}
   - component: {fileID: 3845021359658084863}
+  - component: {fileID: -8163166371316401215}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -523,3 +556,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: edfb3e047913c584cac12242ebe9f5bc, type: 2}
   turretTransform: {fileID: 116202661463292679}
+--- !u!114 &-8163166371316401215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8838053479968204428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9324d6df59273144b92312ffa35ce574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: edfb3e047913c584cac12242ebe9f5bc, type: 2}
+  projectileSpawnPoint: {fileID: 5314394947134716580}
+  serverProjectilePrefab: {fileID: 2942572562889547112, guid: 13e4c275b34250c4caf2ab9e923f48f9, type: 3}
+  clientProjectilePrefab: {fileID: 4240236342509854975, guid: 2cc80f70991d935469c73f6d6c43aeff, type: 3}
+  projectileSpeed: 30
