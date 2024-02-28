@@ -45,7 +45,7 @@ public class HostGameManager
 
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
 
-        RelayServerData relayServerData = new RelayServerData(allocation, "udp"); // user datagram protocol
+        RelayServerData relayServerData = new RelayServerData(allocation, "dtls"); // Datagram Transpor Layer Security
         transport.SetRelayServerData(relayServerData);
 
         NetworkManager.Singleton.StartHost();
