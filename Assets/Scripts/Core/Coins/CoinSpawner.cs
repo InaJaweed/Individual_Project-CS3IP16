@@ -7,7 +7,7 @@ public class CoinSpawner : NetworkBehaviour
 {
     [SerializeField] private RespawningCoin coinPrefab;
 
-    [SerializeField] private int maxCoins = 50;
+    [SerializeField] private int maxCoins = 20;
     [SerializeField] private int coinValue = 10;
     [SerializeField] private Vector2 xSpawnRange;
     [SerializeField] private Vector2 ySpawnRange;
