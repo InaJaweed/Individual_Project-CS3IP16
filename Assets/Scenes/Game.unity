@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 3344329115905637448, guid: 6da2a443739e4224eba51c5f0ee79045, type: 3}
-  maxCoins: 100
+  maxCoins: 20
   coinValue: 10
   xSpawnRange: {x: -50, y: 50}
   ySpawnRange: {x: -50, y: 50}
