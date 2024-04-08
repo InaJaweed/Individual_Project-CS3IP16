@@ -548,7 +548,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.993836, y: -5.254237, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 3344329115905637448, guid: 6da2a443739e4224eba51c5f0ee79045, type: 3}
-  maxCoins: 20
+  maxCoins: 100
   coinValue: 10
   xSpawnRange: {x: -50, y: 50}
   ySpawnRange: {x: -50, y: 50}

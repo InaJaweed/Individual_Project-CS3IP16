@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 3845021359658084863}
   - component: {fileID: -8163166371316401215}
   - component: {fileID: 6304801218411963643}
-  - component: {fileID: 716198501655816925}
+  - component: {fileID: 7986957421582792520}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 1572069076585436382}
   <Health>k__BackingField: {fileID: 6304801218411963643}
-  <Wallet>k__BackingField: {fileID: 716198501655816925}
+  <Wallet>k__BackingField: {fileID: 7986957421582792520}
   ownerPriority: 15
   PlayerName:
     m_InternalValue:
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: edfb3e047913c584cac12242ebe9f5bc, type: 2}
-  wallet: {fileID: 716198501655816925}
+  wallet: {fileID: 7986957421582792520}
   projectileSpawnPoint: {fileID: 5314394947134716580}
   serverProjectilePrefab: {fileID: 2942572562889547112, guid: 13e4c275b34250c4caf2ab9e923f48f9, type: 3}
   clientProjectilePrefab: {fileID: 4240236342509854975, guid: 2cc80f70991d935469c73f6d6c43aeff, type: 3}
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 100
   CurrentHealth:
     m_InternalValue: 0
---- !u!114 &716198501655816925
+--- !u!114 &7986957421582792520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1191,5 +1191,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d541dbd6e261d4881256ea2c4e112c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 6304801218411963643}
+  coinPrefab: {fileID: -5934846219677897602, guid: 1be0396713a791845b4a406d045d9b7a, type: 3}
+  coinSpread: 3
+  bountyPercentage: 50
+  bountyCoinCount: 10
+  minBountyCoinValue: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   TotalCoins:
     m_InternalValue: 0
