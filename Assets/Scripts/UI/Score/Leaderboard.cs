@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -8,8 +9,10 @@ public class Leaderboard : NetworkBehaviour
 {
     [SerializeField] private Transform leaderboardHolder;
     [SerializeField] private DisplayScore leaderboardPrefab;
+    [SerializeField] private int scoreToDisplay = 5;
     
     private NetworkList<LeaderboardState> stateList;
+    private List<DisplayScore> scoreDisplay = new List<DisplayScore>();
 
     private void Awake()
     {
@@ -65,8 +68,55 @@ public class Leaderboard : NetworkBehaviour
         switch (changeEvent.Type)
         {
             case NetworkListEvent<LeaderboardState>.EventType.Add:
-                Instantiate(leaderboardPrefab, leaderboardHolder);
+                if(!scoreDisplay.Any(x => x.ClientId == changeEvent.Value.ClientID))
+                {
+                   DisplayScore leaderboardScore = Instantiate(leaderboardPrefab, leaderboardHolder);
+                    
+                    leaderboardScore.Initialise(changeEvent.Value.ClientID, changeEvent.Value.PlayerName, changeEvent.Value.Coins);
+
+                    scoreDisplay.Add(leaderboardScore);
+                }
                 break;
+            case NetworkListEvent<LeaderboardState>.EventType.Remove:
+               DisplayScore displayToRemove = scoreDisplay.FirstOrDefault(x => x.ClientId == changeEvent.Value.ClientID);
+
+                if(displayToRemove != null)
+                {
+                    displayToRemove.transform.SetParent(null);
+                    Destroy(displayToRemove.gameObject);
+                    scoreDisplay.Remove(displayToRemove);
+                }
+                break;
+            case NetworkListEvent<LeaderboardState>.EventType.Value:
+                DisplayScore displayToValueUpdate = scoreDisplay.FirstOrDefault(x => x.ClientId == changeEvent.Value.ClientID);
+
+                if(displayToValueUpdate != null)
+                {
+                    displayToValueUpdate.UpdateCoins(changeEvent.Value.Coins);
+                }
+                break;
+        }
+
+        scoreDisplay.Sort((first, last) => last.Coins.CompareTo(first.Coins));
+
+        for (int i = 0; i < scoreDisplay.Count; i++)
+        {
+            scoreDisplay[i].transform.SetSiblingIndex(i);
+            scoreDisplay[i].UpdateText();
+
+            bool shouldShow = i <= scoreToDisplay - 1;
+            scoreDisplay[i].gameObject.SetActive(shouldShow);
+        }
+
+        DisplayScore myScore = scoreDisplay.FirstOrDefault(x => x.ClientId == NetworkManager.Singleton.LocalClientId);
+
+        if (myScore != null)
+        {
+            if(myScore.transform.GetSiblingIndex() >= scoreToDisplay)
+            {
+                leaderboardHolder.GetChild(scoreToDisplay -1).gameObject.SetActive(false);
+                myScore.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -77,7 +127,9 @@ public class Leaderboard : NetworkBehaviour
             ClientID = player.OwnerClientId,
             PlayerName = player.PlayerName.Value,
             Coins = 0
-        }); 
+        });
+
+        player.Wallet.TotalCoins.OnValueChanged += (oldCoins, newCoins) => HandleCoinsUpdate(player.OwnerClientId, newCoins);
     }
 
     private void HandlePlayerDespawned(TankPlayer player)
@@ -92,6 +144,28 @@ public class Leaderboard : NetworkBehaviour
             }
             stateList.Remove(state);
             break;
+        }
+
+        player.Wallet.TotalCoins.OnValueChanged -= (oldCoins, newCoins) => HandleCoinsUpdate(player.OwnerClientId, newCoins);
+    }
+
+    private void HandleCoinsUpdate(ulong clientId, int newCoins)
+    {
+        for (int i = 0; i < stateList.Count; i++)
+        {
+            if(stateList[i].ClientID != clientId)
+            {
+                continue;
+            }
+
+            stateList[i] = new LeaderboardState
+            {
+                ClientID = stateList[i].ClientID,
+                PlayerName = stateList[i].PlayerName,
+                Coins = newCoins
+            };
+
+            return;
         }
     }
 }
