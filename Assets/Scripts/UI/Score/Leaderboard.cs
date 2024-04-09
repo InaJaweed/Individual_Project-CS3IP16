@@ -69,7 +69,6 @@ public class Leaderboard : NetworkBehaviour
         {
             return;
         }
-
         switch (changeEvent.Type)
         {
             case NetworkListEvent<LeaderboardState>.EventType.Add:
