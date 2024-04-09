@@ -12,7 +12,6 @@ public class SpawnOnDestroy : MonoBehaviour
         {
             return;
         }
-
         Instantiate(prefab, transform.position, Quaternion.identity);
     }
 

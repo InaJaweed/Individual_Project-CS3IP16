@@ -23,7 +23,8 @@ public class ProjectileFire : NetworkBehaviour
     [SerializeField] private float muzzleFlashDuration;
     [SerializeField] private int costToFire;
 
-    private bool isOverUI;
+
+    private bool isPointerOverUI;
     private bool shouldFire;
     private float timer;
     private float muzzleFlashTimer;
@@ -56,7 +57,10 @@ public class ProjectileFire : NetworkBehaviour
 
         if (!IsOwner) { return; }
 
-        isOverUI = EventSystem.current.IsPointerOverGameObject();
+
+        isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
+
+
 
         if(timer > 0)
         {
@@ -86,10 +90,12 @@ public class ProjectileFire : NetworkBehaviour
     {
         if (shouldFire)
         {
-            if (isOverUI)
+
+            if (isPointerOverUI)
             {
                 return;
             }
+
 
         }
         this.shouldFire = shouldFire;
