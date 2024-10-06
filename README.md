@@ -6,7 +6,7 @@ Welcome to the Unity project repository for *Tank Tactics*, a top-down online mu
 
 ## Project Overview
 
-*Tank Tactics* is an engaging multiplayer game where up to 20 players compete in fast-paced tank battles. Developed using Unity, the game leverages modern multiplayer technologies such as Netcode for GameObjects (NGO) and Unity Gaming Services (UGS), allowing seamless multiplayer experiences without the need for complex network configurations like port forwarding or IP address sharing.
+*Tank Tactics* is a top-down online multiplayer tank battle game. Developed using Unity, the game leverages modern multiplayer technologies such as Netcode for GameObjects (NGO) and Unity Gaming Services (UGS), allowing seamless multiplayer experiences without the need for complex network configurations like port forwarding or IP address sharing.
 
 **Note:** For the current version of the game, UGS and multiplayer functionality have been **disabled**. This means that while the game's core features remain, it does not currently support online matchmaking or multiplayer gameplay.
 
