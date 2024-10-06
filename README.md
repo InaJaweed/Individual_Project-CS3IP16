@@ -1,4 +1,4 @@
-# FinalYearProject-CS3IP16
+# Final Year Project-CS3IP16
 
 ## Tank Tactics: Top-Down Online Multiplayer Shooter
 
