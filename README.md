@@ -30,7 +30,7 @@ Welcome to the Unity project repository for *Tank Tactics*, a top-down online mu
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/your-username/tank-tactics-unity.git
+    git clone https://github.com/InaJaweed/Individual_Project-CS3IP16
     ```
 2. Open the project in Unity.
 
